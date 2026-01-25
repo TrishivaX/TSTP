@@ -9,7 +9,7 @@ public class countPrimes{
         boolean[] composites = new boolean[n];
         int limit = (int)Math.sqrt(n);
 
-        
+
         for(int i = 2; i<= limit; i++){
             if(!composites[i]);{
                 for(int j = i*i; j<n; j+=i){
