@@ -1,9 +1,25 @@
 package com.kavya;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 //Using XOR property
 public class SingleNumber {
     public static int singleNum(int[] nums){
+
+        //freq map
+        HashMap<Integer, Integer> hm = new HashMap<>();
+        for(int a: nums){
+            hm.put(a, hm.getOrDefault(a, 0)+1);
+        }
+        for(Map.Entry<Integer, Integer> cm : hm.entrySet()){
+            if(cm.getValue() == 1){
+                System.out.println("output from freqmap : ------"+cm.getKey());
+                break;
+            }
+        }
+
+
         int value = 0;
         for(int i = 0; i< nums.length; i++){
             value = value^nums[i];

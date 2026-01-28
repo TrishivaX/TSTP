@@ -1,37 +1,29 @@
-package com.kavya;
+package com.trishivax.dsa;
 
 import java.util.Scanner;
+
 //using Sieve of Eratosthenes
-public class countPrimes{
+public class Test {
 
-    //1lakh queries
-    //kavya: max value of n =  1lakh
-
-    //composite[] =={}........................
-    public static int CountPrimes(int n){
-        if(n <= 2) return 0;
+    public static int CountPrimes(int n) {
+        if (n <= 2) return 0;
         boolean[] composites = new boolean[n];
-        int limit = (int)Math.sqrt(n);
+        int limit = (int) Math.sqrt(n);
 
 
-        for(int i = 2; i<= limit; i++){
-            if(!composites[i]);{
-                for(int j = i*i; j<n; j+=i){
+        for (int i = 2; i <= limit; i++) {
+            if (!composites[i]) {
+                for (int j = i * i; j < n; j += i) {
                     composites[j] = true;
                 }
             }
         }
-
-
-
         int primeCount = 0;
-        for(int i = 2; i<n; i++){
-            if (!composites[i]){
+        for (int i = 2; i < n; i++) {
+            if (!composites[i]) {
                 primeCount++;
             }
         }
-
-
         return primeCount;
 
     }
