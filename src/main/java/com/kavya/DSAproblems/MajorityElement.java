@@ -1,10 +1,28 @@
 package com.kavya.DSAproblems;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 //Using Moore's vote Algorithm
 public class MajorityElement {
 
     public static int majorityElement(int[] nums ){
+        // 1 2 3 3 4 6 6 6 6 6 6
+
+        //key , value = number , freq
+        //Frequency Array ... frequency map
+        HashMap<Integer, Integer> hm = new HashMap<>();
+        for(int a: nums){
+            hm.put(a, hm.getOrDefault(a, 0)+1);
+        }
+        for(Map.Entry<Integer, Integer> cm : hm.entrySet()){
+            if(cm.getValue() > nums.length/2){
+                System.out.println("output from map : ------"+cm.getKey());
+                break;
+            }
+        }
+
+
         int candidate = 0;
         int count = 0;
 
