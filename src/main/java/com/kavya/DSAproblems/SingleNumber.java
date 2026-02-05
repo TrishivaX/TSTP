@@ -1,4 +1,4 @@
-package com.kavya;
+package com.kavya.DSAproblems;
 
 import java.util.HashMap;
 import java.util.Map;

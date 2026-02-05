@@ -1,4 +1,4 @@
-package com.kavya;
+package com.kavya.DSAproblems;
 
 import java.util.Scanner;
 
@@ -18,6 +18,5 @@ public class reverseNumber {
         }
         System.out.println("Reversed number: "+ reverse);
         sc.close();
-
     }
 }
